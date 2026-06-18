@@ -46,9 +46,11 @@ Run the included install script:
 ## 🚀 Usage
 
 1. **Restart VLC** after installing
-2. Go to **View** → **Auto Chapter Skipper** to activate the extension
-3. Play any media with named chapters (MKV, DVD, etc.)
-4. Chapters matching skip keywords are automatically skipped!
+2. The extension is **disabled by default**.
+3. Go to **View** → **Auto Chapter Skipper** to open the settings menu.
+4. Check the **Auto-skip enabled** box and click **Save** to turn it on.
+5. Play any media with named chapters (MKV, DVD, etc.)
+6. Chapters matching skip keywords will now be automatically skipped!
 
 ### Settings
 

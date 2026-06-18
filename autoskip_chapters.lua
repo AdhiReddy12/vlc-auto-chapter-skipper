@@ -15,7 +15,7 @@
     3. View → "Auto Chapter Skipper" to activate
     4. View → "Auto Chapter Skipper" → Settings to configure
   
-  Author:  Generated with Antigravity
+  Author:  AadhiReddy
   Version: 1.0.0
   License: MIT
 ================================================================================
@@ -51,7 +51,7 @@ local END_SKIP_MARGIN_US = 2000000  -- when skipping the last chapter, jump near
 -------------------------------------------------------------------------------
 
 local config = {
-    enabled  = true,
+    enabled  = false,
     keywords = {},   -- populated from defaults or saved config
 }
 
@@ -79,7 +79,7 @@ function descriptor()
     return {
         title       = "Auto Chapter Skipper",
         version     = "1.0.0",
-        author      = "AadiReddy",
+        author      = "AadhiReddy",
         url         = "",
         shortdesc   = "Auto-skip intro/opening/ending chapters",
         description = "Automatically detects and skips chapters whose titles "
@@ -111,8 +111,8 @@ function activate()
     vlc.msg.info("[AutoSkip] Extension activated")
     state.deactivating = false
     load_config()
+    
     open_settings_dialog()
-    close_dialog() -- create and hide so state is initialized
     attach_current_input_callbacks()
     check_chapter()
     start_timer()
@@ -638,7 +638,7 @@ end
 
 function on_reset_defaults()
     config.keywords = shallow_copy(DEFAULT_KEYWORDS)
-    config.enabled  = true
+    config.enabled  = false
 
     -- Update UI
     if state.w_keywords_input then
@@ -722,7 +722,7 @@ end
 function load_config()
     -- Start with defaults
     config.keywords = shallow_copy(DEFAULT_KEYWORDS)
-    config.enabled  = true
+    config.enabled  = false
 
     local path = get_config_path()
     local file = io.open(path, "r")

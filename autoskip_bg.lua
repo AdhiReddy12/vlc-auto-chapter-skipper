@@ -15,7 +15,7 @@ local RESKIP_COOLDOWN_MS = 1000
 local END_SKIP_MARGIN_US = 2000000
 
 local config = {
-    enabled = true,
+    enabled = false,
     keywords = {
         "intro", "opening", "op", "ending", "ed", "credits", "closing", 
         "preview", "next episode preview", "prologue", "recap"
@@ -89,7 +89,7 @@ function current_time_ms()
     if ok and mdate then
         return math.floor(mdate / 1000)
     end
-    return 0
+    return math.floor(os.clock() * 1000)
 end
 
 function skip_to_end(input)
