@@ -16,10 +16,14 @@ $sourceBg = Join-Path $scriptDir "autoskip_bg.lua"
 
 if (-not (Test-Path $sourceExt)) {
     Write-Host "ERROR: Cannot find 'autoskip_chapters.lua' in $scriptDir" -ForegroundColor Red
+    Write-Host "Please extract the entire ZIP file before running this installer." -ForegroundColor Yellow
+    Read-Host "Press Enter to exit"
     exit 1
 }
 if (-not (Test-Path $sourceBg)) {
     Write-Host "ERROR: Cannot find 'autoskip_bg.lua' in $scriptDir" -ForegroundColor Red
+    Write-Host "Please extract the entire ZIP file before running this installer." -ForegroundColor Yellow
+    Read-Host "Press Enter to exit"
     exit 1
 }
 
@@ -27,9 +31,11 @@ $vlcExtDir = Join-Path $env:APPDATA "vlc\lua\extensions"
 $vlcIntfDir = Join-Path $env:APPDATA "vlc\lua\intf"
 
 if (-not (Test-Path $vlcExtDir)) {
+    Write-Host "Creating extension directory..." -ForegroundColor DarkGray
     New-Item -ItemType Directory -Path $vlcExtDir -Force | Out-Null
 }
 if (-not (Test-Path $vlcIntfDir)) {
+    Write-Host "Creating intf directory..." -ForegroundColor DarkGray
     New-Item -ItemType Directory -Path $vlcIntfDir -Force | Out-Null
 }
 
@@ -81,3 +87,4 @@ Write-Host "  2. The background watcher is now active!" -ForegroundColor White
 Write-Host "  3. Go to View -> 'Auto Chapter Skipper' for settings." -ForegroundColor White
 Write-Host "--------------------------------------------" -ForegroundColor DarkGray
 Write-Host ""
+Read-Host "Press Enter to exit"

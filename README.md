@@ -19,11 +19,9 @@ Automatically skips intro, opening, ending, and credits chapters in VLC media pl
 
 ### Automatic (Windows)
 
-Run the included install script:
+Double-click the `install.bat` file to run the installer.
 
-```powershell
-.\install.ps1
-```
+> **Troubleshooting:** If the installer closes immediately, ensure you have extracted all files from the ZIP archive before running it.
 
 ### Manual
 
@@ -36,7 +34,7 @@ Run the included install script:
 | Linux   | `~/.local/share/vlc/lua/extensions/` | `~/.local/share/vlc/lua/intf/` |
 | macOS   | `~/Library/Application Support/org.videolan.vlc/lua/extensions/` | `~/Library/Application Support/org.videolan.vlc/lua/intf/` |
 
-> **Note:** Create the `extensions` and `intf` folders if they don't exist.
+> **Note:** If installing manually, you will need to create the `extensions` and `intf` folders if they don't already exist. The automatic `install.ps1` script handles this for you.
 
 3. **Enable Background Watcher in VLC:**
    - Open your VLC configuration file (`vlcrc`), usually located one level above the `lua` folder.
